@@ -46,7 +46,7 @@ submitDailyButton.addEventListener("click", async function () {
     const data = await response.json();
 
     submitResult.textContent =
-      data.message + "：" + data.received.content;
+      data.message + "：" + data.content;
 
   } catch (error) {
 
