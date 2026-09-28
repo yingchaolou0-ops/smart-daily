@@ -3,3 +3,15 @@
   "main": "worker.js",
   "compatibility_date": "2026-09-26"
 }
+{
+  "name": "smart-daily-api",
+  "main": "worker.js",
+  "compatibility_date": "2026-09-26",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "smart-daily-db",
+      "database_id": "你的数据库ID"
+    }
+  ]
+}
