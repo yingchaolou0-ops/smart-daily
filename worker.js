@@ -38,7 +38,7 @@ export default {
       return new Response(
         JSON.stringify({
           success: true,
-          message: "日报已收到",
+          message: "日报已接收",
           received: data
         }),
         {
