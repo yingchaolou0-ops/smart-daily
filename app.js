@@ -51,6 +51,9 @@ submitDailyButton.addEventListener("click", async function () {
   } catch (error) {
 
     submitResult.textContent = "提交失败";
+  }
+
+});
 const localAiTestButton = document.getElementById("localAiTestButton");
 const localAiResult = document.getElementById("localAiResult");
 
@@ -86,8 +89,6 @@ localAiTestButton.addEventListener("click", async function () {
   } catch (error) {
     localAiResult.textContent =
       "本地 Qwen 连接失败：" + error.message;
-  }
-});
   }
 
 });
