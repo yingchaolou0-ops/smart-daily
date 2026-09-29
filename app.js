@@ -97,7 +97,7 @@ xxx
 4. 输出结构清晰；
 5. 只输出日报内容，不输出解释说明。
 `
-}
+},
 {
  role: "user",
  content: dailyContent.value
@@ -106,7 +106,7 @@ xxx
   think:false,
   stream: false,
   options: {
-    num_predict: 100
+    num_predict: 200
   }
 })
 }
