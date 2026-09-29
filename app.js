@@ -82,6 +82,9 @@ localAiTestButton.addEventListener("click", async function () {
  ],
   think:false,
   stream: false
+  options: {
+    num_predict: 100
+  }
 })
 }
 );
