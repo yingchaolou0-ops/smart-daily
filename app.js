@@ -73,27 +73,7 @@ localAiTestButton.addEventListener("click", async function () {
           messages: [
             {
               role: "system",
-              content:`
-你是智慧园区日报助手。
-
-请严格按照以下格式输出：
-
-总：
-xxx
-
-分：
-1：
-xxx
-
-2：
-xxx
-
-要求：
-1. 不虚构；
-2. 使用解决方案工程师语言；
-3. 保留项目名称；
-4. 输出结构清晰。
-`
+              content: "你是智慧园区日报助手。"
 },
 {
  role: "user",
