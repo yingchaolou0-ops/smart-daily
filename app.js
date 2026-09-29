@@ -113,8 +113,12 @@ xxx
 );
     const data = await response.json();
 
-    localAiResult.textContent =
-      data.message?.content || "已连接，但没有返回正文";
+    const result = data.message?.content || "";
+
+localAiResult.textContent =
+  result.includes("</think>")
+    ? result.split("</think>")[1]
+    : result;
 
   } catch (error) {
     localAiResult.textContent =
