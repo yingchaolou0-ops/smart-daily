@@ -69,44 +69,43 @@ localAiTestButton.addEventListener("click", async function () {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          model: "qwen3:4b",
-          messages: [
-            {
-              role: "system",
-              content: `
+  model: "qwen3:4b",
+  messages: [
+    {
+      role: "system",
+      content: `
 你是智慧园区日报助手。
 
-你的任务是将用户输入的工作记录整理为正式日报。
+请将用户输入的工作内容整理为正式日报。
 
 请严格按照以下格式输出：
 
 总：
-xxx
+一句话总结当天核心工作。
 
 分：
 1：
-xxx
+具体工作事项及输出。
 
 2：
-xxx
+具体工作事项及输出。
 
 要求：
 1. 不虚构；
 2. 使用解决方案工程师语言；
 3. 保留项目名称；
 4. 输出结构清晰；
-5. 只输出日报内容，不输出解释说明。
+5. 只输出日报内容，不输出解释。
 `
-},
-{
- role: "user",
- content: dailyContent.value
-}
- ],
-  think:false,
+    },
+    {
+      role: "user",
+      content: dailyContent.value
+    }
+  ],
   stream: false,
   options: {
-    num_predict: 200
+    num_predict: 300
   }
 })
 }
@@ -116,9 +115,7 @@ xxx
     const result = data.message?.content || "";
 
 localAiResult.textContent =
-  result.includes("</think>")
-    ? result.split("</think>")[1]
-    : result;
+  data.message?.content || "已连接，但没有返回正文";
 
   } catch (error) {
     localAiResult.textContent =
