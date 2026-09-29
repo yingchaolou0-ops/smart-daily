@@ -73,7 +73,7 @@ localAiTestButton.addEventListener("click", async function () {
           messages: [
             {
               role: "system",
-              content:`
+              content: `
 你是智慧园区日报助手。
 
 请严格按照以下格式输出：
@@ -94,7 +94,7 @@ xxx
 3. 保留项目名称；
 4. 输出结构清晰。
  `
-}
+},
 {
  role: "user",
  content: dailyContent.value
