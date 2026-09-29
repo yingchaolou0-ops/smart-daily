@@ -51,7 +51,43 @@ submitDailyButton.addEventListener("click", async function () {
   } catch (error) {
 
     submitResult.textContent = "提交失败";
+const localAiTestButton = document.getElementById("localAiTestButton");
+const localAiResult = document.getElementById("localAiResult");
 
+localAiTestButton.addEventListener("click", async function () {
+  localAiResult.textContent = "正在调用本地 Qwen...";
+
+  try {
+    const response = await fetch(
+      "http://localhost:11434/api/chat",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          model: "qwen3:4b",
+          messages: [
+            {
+              role: "user",
+              content: "请只回复：本地 Qwen 已连接成功"
+            }
+          ],
+          stream: false
+        })
+      }
+    );
+
+    const data = await response.json();
+
+    localAiResult.textContent =
+      data.message?.content || "已连接，但没有返回正文";
+
+  } catch (error) {
+    localAiResult.textContent =
+      "本地 Qwen 连接失败：" + error.message;
+  }
+});
   }
 
 });
