@@ -104,7 +104,7 @@ xxx
 }
  ],
   think:false,
-  stream: false
+  stream: false,
   options: {
     num_predict: 100
   }
