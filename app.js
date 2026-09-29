@@ -73,7 +73,7 @@ localAiTestButton.addEventListener("click", async function () {
           messages: [
             {
               role: "system",
-              content: `
+              content:`
 你是智慧园区日报助手。
 
 请严格按照以下格式输出：
