@@ -80,6 +80,7 @@ localAiTestButton.addEventListener("click", async function () {
  content: dailyContent.value
 }
  ],
+  think:false,
   stream: false
 })
 }
