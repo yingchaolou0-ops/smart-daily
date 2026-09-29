@@ -13,28 +13,22 @@ export default {
       });
     }
 
-    // 读取日报
-    if (request.method === "GET") {
+   // 测试 API 是否正常
+if (request.method === "GET") {
 
-      const result = await env.DB
-        .prepare(
-          "SELECT id, content, created_at FROM reports ORDER BY id DESC"
-        )
-        .all();
-
-      return new Response(
-        JSON.stringify({
-          success: true,
-          reports: result.results
-        }),
-        {
-          headers: {
-            "Content-Type": "application/json",
-            ...corsHeaders
-          }
-        }
-      );
+  return new Response(
+    JSON.stringify({
+      success: true,
+      message: "Worker API 已连接成功"
+    }),
+    {
+      headers: {
+        "Content-Type": "application/json",
+        ...corsHeaders
+      }
     }
+  );
+}
 
     // 保存日报
     if (request.method === "POST") {
