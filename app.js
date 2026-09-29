@@ -77,7 +77,7 @@ localAiTestButton.addEventListener("click", async function () {
 },
 {
  role: "user",
- content: dailyContent.value
+ content: "/no_think\n" + dailyContent.value
 }
  ],
   think:false,
