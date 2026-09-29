@@ -102,6 +102,8 @@ xxx
  ],
   stream: false
 })
+}
+);
     const data = await response.json();
 
     localAiResult.textContent =
